@@ -1,4 +1,4 @@
-# 🛡️ AI SOC Analyst Simulator
+# 🛡️ AI-SOC-Analyst-Simulator
 
 🚀 AI-powered SOC (Security Operations Center) simulator that analyzes security logs, detects threats, assigns risk scores, and recommends response actions.
 
