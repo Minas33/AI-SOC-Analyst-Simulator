@@ -1,8 +1,28 @@
 # 🛡️ AI-SOC-Analyst-Simulator
+🚀 AI-powered SOC (Security Operations Center) simulator...
+## 🚀 Features
+- Detects brute force attacks
+- Identifies suspicious logins (location anomalies)
+- Detects possible data exfiltration
+- Assigns severity levels (LOW / MEDIUM / HIGH)
+- Provides recommended SOC actions
+- Generates structured JSON report
+## 🧠 Example Output
+```bash
+[ALERT] Brute Force Attempt
+Severity: HIGH
+Action: Block IP / investigate source
 
-🚀 AI-powered SOC (Security Operations Center) simulator that analyzes security logs, detects threats, assigns risk scores, and recommends response actions.
+[ALERT] Suspicious Login
+Severity: MEDIUM
+Action: Verify user identity and location
 
----
+[ALERT] Possible Data Exfiltration
+Severity: HIGH
+Action: Investigate transfer and isolate host
+
+TOTAL RISK SCORE: 155
+STATUS: HIGH RISK
 
 ## 🔥 Overview
 
