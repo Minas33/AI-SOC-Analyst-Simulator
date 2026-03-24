@@ -44,10 +44,16 @@ def show_status():
         print("STATUS: LOW RISK ✅")
 
 print("Starting Real-Time SOC Simulator...\n")
-
+def auto_response(ip, risk_score):
+    if risk_score > 100:
+        print(f"[AUTO RESPONSE] 🚫 Blocking IP: {ip}")
+    elif risk_score > 70:
+        print(f"[AUTO RESPONSE] ⚠️ Monitoring IP: {ip}")
 while True:
     log = generate_log()
     analyze_log(log)
     show_status()
+    auto_response(log["ip"], risk_score)
     print("-" * 40)
     time.sleep(2)
+
