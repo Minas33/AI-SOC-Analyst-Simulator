@@ -1,0 +1,26 @@
+{
+    "total_alerts": 4,
+    "risk_score": 155,
+    "alerts": [
+        {
+            "alert": "Brute Force Attempt",
+            "severity": "HIGH",
+            "action": "Block IP / investigate source"
+        },
+        {
+            "alert": "Brute Force Attempt",
+            "severity": "HIGH",
+            "action": "Block IP / investigate source"
+        },
+        {
+            "alert": "Suspicious Login",
+            "severity": "MEDIUM",
+            "action": "Verify user identity and location"
+        },
+        {
+            "alert": "Possible Data Exfiltration",
+            "severity": "HIGH",
+            "action": "Investigate transfer and isolate host"
+        }
+    ]
+}
