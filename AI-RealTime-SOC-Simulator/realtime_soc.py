@@ -1,12 +1,15 @@
 import time
 import random
-
+import datetime
 # Simulated IPs and locations
 ips = ["192.168.1.5", "10.0.0.3", "172.16.0.8", "203.0.113.10"]
 locations = ["US", "RU", "CN", "DE", "BR"]
 
 risk_score = 0
-
+def log_to_file(message):
+    with open("alerts.log", "a") as f:
+        timestamp = datetime.datetime.now()
+        f.write(f"[{timestamp}] {message}\n")
 def generate_log():
     event_type = random.choice(["login", "failed_login", "data_transfer"])
     ip = random.choice(ips)
@@ -43,17 +46,25 @@ def show_status():
     else:
         print("STATUS: LOW RISK ✅")
 
-print("Starting Real-Time SOC Simulator...\n")
 def auto_response(ip, risk_score):
     if risk_score > 100:
-        print(f"[AUTO RESPONSE] 🚫 Blocking IP: {ip}")
+        action = f"[AUTO RESPONSE] Blocking IP: {ip}"
+        print(action)
+        log_to_file(action)
     elif risk_score > 70:
-        print(f"[AUTO RESPONSE] ⚠️ Monitoring IP: {ip}")
+        action = f"[AUTO RESPONSE] Monitoring IP: {ip}"
+        print(action)
+        log_to_file(action)
+
+print("Starting Real-Time SOC Simulator...\n")
+
 while True:
     log = generate_log()
     analyze_log(log)
+    log_to_file(f"IP: {log['ip']} | Risk: {risk_score}")
     show_status()
     auto_response(log["ip"], risk_score)
     print("-" * 40)
     time.sleep(2)
+
 
